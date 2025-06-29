@@ -2,7 +2,7 @@ REST Library Management System
 A simple RESTful API for managing a library system using Spring Boot, Spring Data JPA, and an H2 in-memory database.
 
 # Features
-→ Add new books to the library.
+→ Add new books to the library.<br>
 → Retrieve all books.
 → Retrieve a specific book by ID.
 → Update book information.
