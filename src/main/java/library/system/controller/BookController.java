@@ -102,6 +102,7 @@ public class BookController {
             List<Book> books;
             if (author != null) {
                 books = bookRepository.findByAuthorContainingIgnoreCase(author);
+                System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: " + author);
             } else if (title != null) {
                 books = bookRepository.findByTitleContainingIgnoreCase(title);
             } else if (genre != null) {
@@ -112,8 +113,10 @@ public class BookController {
             return books.isEmpty()
                     ? new ResponseEntity<>(HttpStatus.NO_CONTENT)
                     : new ResponseEntity<>(books, HttpStatus.OK);
-        } catch (Exception e) {
+        }catch (Exception e) {
+            e.printStackTrace(); // This will show the real error in the Spring Boot console
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
+
     }
 }
