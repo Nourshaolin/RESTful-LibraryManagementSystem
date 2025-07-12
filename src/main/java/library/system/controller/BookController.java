@@ -14,10 +14,9 @@ import java.util.List;
 import java.util.Optional;
 
 
-
+@CrossOrigin(origins = "http://localhost:5500")
 @RestController
 @RequestMapping("/api/books")
-@CrossOrigin(origins = "*")
 public class BookController {
 
     @Autowired
@@ -95,14 +94,13 @@ public class BookController {
     // GET /api/books/search?author=...&title=...&genre=... - Search books
     @GetMapping("/search")
     public ResponseEntity<List<Book>> searchBooks(
-            @RequestParam(required = false) String author,
-            @RequestParam(required = false) String title,
-            @RequestParam(required = false) String genre) {
+            @RequestParam(name = "author", required = false) String author,
+            @RequestParam(name = "title", required = false) String title,
+            @RequestParam(name = "genre", required = false) String genre) {
         try {
             List<Book> books;
             if (author != null) {
                 books = bookRepository.findByAuthorContainingIgnoreCase(author);
-                System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA: " + author);
             } else if (title != null) {
                 books = bookRepository.findByTitleContainingIgnoreCase(title);
             } else if (genre != null) {

@@ -1,0 +1,54 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff0f5;
+    color: #4b2c5e;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #d36ba0;
+    margin-bottom: 30px;
+}
+
+button {
+    background-color: #ffc1e3;
+    border: none;
+    color: #4b2c5e;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ffaad4;
+}
+
+#book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#book-list div {
+    background: #fff;
+    border: 2px solid #ffd6ec;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+    width: 250px;
+    text-align: left;
+    box-shadow: 3px 3px 12px #f8c7df;
+}
+
+#book-list div strong {
+    color: #b14587;
+}
